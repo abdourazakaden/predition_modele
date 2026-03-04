@@ -93,7 +93,7 @@ bp = st.slider("Tension (mmHg)", 30, 130, 70, label_visibility="collapsed")
 st.caption(f"➜ Tension : **{bp} mmHg**")
 st.markdown(" ")
 
-# Question 5
+# Question 5 
 st.write("**5. Quelle est l'épaisseur de votre pli cutané ? (mm)**")
 st.caption("💡 Mesure au niveau du triceps — valeur normale : 10 à 30 mm")
 skin = st.slider("Épaisseur peau (mm)", 0, 100, 20, label_visibility="collapsed")
