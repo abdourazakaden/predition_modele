@@ -16,7 +16,7 @@ st.set_page_config(
 # CHARGEMENT DU MODÈLE
 # ============================================================
 @st.cache_resource
-def load_model(fichier_pkl):
+def load_model(fichier_pkl): 
     data = pickle.load(fichier_pkl)
     return (
         data['models'],
