@@ -2,55 +2,78 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-# ========================
+# ============================================
 # TITRE PRINCIPAL
-# ========================
-st.title("Application Streamlit - Niveau Débutant 🚀")
+# ============================================
+st.title("🎓 Streamlit - Niveau 1 : Les Bases")
+st.markdown("---")
 
-st.header("1️⃣ Texte et affichage")
+# ============================================
+# SECTION 1 : TEXTE
+# ============================================
+st.header("📝 1. Les Types de Texte")
 
-st.write("Bienvenue Abdirahman 👋")
-st.markdown("**Streamlit** est simple et puissant.")
+st.write("Ceci est un texte simple avec `st.write()`")
+st.markdown("**Gras**, *italique*, et `code` avec `st.markdown()`")
+st.success("✅ Message de succès")
+st.error("❌ Message d'erreur")
+st.info("ℹ️ Message d'information")
+st.warning("⚠️ Message d'avertissement")
 
-# ========================
-# INPUT UTILISATEUR
-# ========================
-st.header("2️⃣ Interaction utilisateur")
+st.markdown("---")
 
-nom = st.text_input("Entrez votre nom :")
+# ============================================
+# SECTION 2 : INTERACTIONS
+# ============================================
+st.header("🎛️ 2. Les Interactions")
 
-age = st.slider("Choisissez votre âge :", 0, 100, 20)
+# Texte input
+nom = st.text_input("👤 Entrez votre prénom :")
+if nom:
+    st.success(f"Bonjour **{nom}** ! 👋")
 
-if st.button("Valider"):
-    st.success(f"Bonjour {nom}, vous avez {age} ans !")
+# Slider
+age = st.slider("🎂 Votre âge :", 1, 100, 20)
+st.write(f"Vous avez **{age} ans**")
 
-# ========================
-# SIDEBAR
-# ========================
-st.sidebar.title("Menu")
-choix = st.sidebar.selectbox(
-    "Choisissez une option",
-    ["Accueil", "Données", "Graphique"]
-)
+# Case à cocher
+accord = st.checkbox("✔️ J'accepte les conditions")
+if accord:
+    st.info("Merci d'avoir accepté !")
 
-# ========================
-# CONTENU SELON MENU
-# ========================
-if choix == "Accueil":
-    st.write("Bienvenue sur la page d'accueil.")
+# Bouton
+if st.button("🎲 Cliquez ici !"):
+    st.balloons()
+    st.write("Vous avez cliqué ! 🎉")
 
-elif choix == "Données":
-    st.subheader("Tableau de données")
-    df = pd.DataFrame({
-        "Colonne A": np.random.randn(10),
-        "Colonne B": np.random.randn(10)
-    })
-    st.dataframe(df)
+st.markdown("---")
 
-elif choix == "Graphique":
-    st.subheader("Graphique simple")
-    chart_data = pd.DataFrame(
-        np.random.randn(20, 3),
-        columns=["A", "B", "C"]
-    )
-    st.line_chart(chart_data)
+# ============================================
+# SECTION 3 : TABLEAU
+# ============================================
+st.header("📋 3. Tableau de Données")
+
+data = pd.DataFrame({
+    "Nom"  : ["Alice", "Bob", "Charlie", "Diana"],
+    "Age"  : [25, 30, 35, 28],
+    "Ville": ["Paris", "Lyon", "Marseille", "Bordeaux"]
+})
+st.dataframe(data)
+
+st.markdown("---")
+
+# ============================================
+# SECTION 4 : GRAPHIQUES
+# ============================================
+st.header("📊 4. Graphiques")
+
+valeurs = np.random.randn(30)
+
+st.subheader("Graphique en ligne")
+st.line_chart(valeurs)
+
+st.subheader("Graphique en barres")
+st.bar_chart(valeurs)
+
+st.markdown("---")
+st.markdown("✅ **Félicitations ! Vous avez terminé le Niveau 1 !**")
