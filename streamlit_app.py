@@ -7,7 +7,7 @@ import pandas as pd
 # CONFIG PAGE
 # ============================================================
 st.set_page_config(
-    page_title="🩺 Prédiction Diabète",
+    page_title="🩺 Prédiction Diabète", 
     page_icon="🩺",
     layout="centered"
 )
