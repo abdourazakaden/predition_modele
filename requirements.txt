@@ -1,5 +1,10 @@
-streamlit
-scikit-learn==1.6.1
-pandas
+torch
+torchvision
 numpy
+pandas
+Pillow
 matplotlib
+seaborn
+scikit-learn
+tqdm
+streamlit
